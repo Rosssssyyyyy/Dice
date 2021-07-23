@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title> Dice Game </title>
+
+        <style>
+            .container{
+                background-color: #432D36;
+                width:100%;
+                height: 100%;
+                text-align: center;
+            }
+
+            h1{
+                color: #A81642;
+                font-style: italic;
+                font-weight: bold;
+                font-size: 500%;
+            }
+
+            .dice{
+                padding: 20px;
+                float: left;
+                position: relative;
+                left:450px;
+                top: 50px;
+                margin:50px;
+            }
+
+            h2{
+                font-family: 'Brush Script MT', cursive;
+                color: #A81642;
+            }
+
+            .image{
+                width: 200px;
+                height: 200px;
+                border-radius: 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class = "container">
+            <h1> Refresh Me </h1>
+
+            <div class = "dice">
+                <h2> Player 1 </h2>
+                <img class = "image" src = "img6.jpg">
+            </div>
+
+            <div class = "dice">
+                <h2> Player 2 </h2>
+                <img class = "image" src = "img6.jpg">
+            </div>
+        </div>
+
+        <script>
+            var randomnumber1 = Math.floor(Math.random()*6) + 1; //1-6
+            var randomDiceImage1 = "img" + randomnumber1 + ".jpg"; //img1.jpg - img6.jpg
+            var image1 = document.querySelectorAll("img")[0];
+            image1.setAttribute("src", randomDiceImage1);
+            
+            var randomnumber2 = Math.floor(Math.random()*6) + 1; //1-6
+            var randomDiceImage2 = "img" + randomnumber2 + ".jpg"; //img1.jpg - img6.jpg
+            var image2 = document.querySelectorAll("img")[1];
+            image2.setAttribute("src", randomDiceImage2);
+
+            if(randomnumber1 > randomnumber2){
+                document.querySelector("h1").innerHTML = "🎉 Player 1 wins!";
+            }
+            else if(randomnumber2 > randomnumber1){
+                document.querySelector("h1").innerHTML = " Player 2 wins! 🎉";
+            }
+            else{
+                document.querySelector("h1").innerHTML = "It's a Draw ⛳";
+            }
+
+        </script>
+    </body>
+
+   
+</html>
